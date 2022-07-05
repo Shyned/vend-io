@@ -1,8 +1,6 @@
 // imported stylesheet
 import "./App.css";
 // import for firebase
-import "./.env.local";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 // react
 import React from "react";
 // import pages
@@ -12,7 +10,7 @@ import SignUp from "./pages/SignUp/SignUp";
 // import components
 import Navbar from "./Components/Navbar/Navbar";
 // imported hooks
-import { useState } from "react";
+
 // react routes imports
 import { Routes, Route } from "react-router-dom";
 
@@ -20,6 +18,7 @@ function App() {
   return (
     <div>
       <Navbar />
+
       <Routes>
         <Route path="/" element={<ManagePage />} />
         <Route path="/login" element={<Login />} />

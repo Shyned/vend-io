@@ -4,19 +4,19 @@ import { getAuth } from "firebase/auth";
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEYS,
+  apiKey: "AIzaSyDYXLAuRIshpMh5ue-GoaFzhVF3_s7ZXCc",
 
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  authDomain: "vendmanage.firebaseapp.com",
 
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  projectId: "vendmanage",
 
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  storageBucket: "vendmanage.appspot.com",
 
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  messagingSenderId: "690828840929",
 
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  appId: "1:690828840929:web:3dc56e22dc704a72434ca0",
 
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
+  measurementId: "G-TZ3PN3PPK2",
 };
 
 // Initialize Firebase
