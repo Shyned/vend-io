@@ -27,6 +27,7 @@ export default function SignUpUser() {
       console.log(err);
     }
     setLoading(false);
+    document.getElementById("signup-form").reset();
   }
 
   return (
@@ -34,6 +35,7 @@ export default function SignUpUser() {
       {error && alert(error)}
 
       <form
+        id="signup-form"
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         onSubmit={handleSubmit}
       >

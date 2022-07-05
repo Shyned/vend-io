@@ -1,11 +1,10 @@
 import React from "react";
 import "./ManagePage.css";
+import { auth } from "../../firebaseConfig";
 
 function ManagePage() {
   return (
-    <div>
-      <h1>Manage Page</h1>
-    </div>
+    <div>{auth.currentUser && <h4>Welcome {auth.currentUser.email}</h4>}</div>
   );
 }
 

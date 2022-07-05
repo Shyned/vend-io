@@ -1,8 +1,10 @@
 // imported stylesheet
 import "./App.css";
 // import for firebase
+import { auth } from "./firebaseConfig";
+import { onAuthStateChanged, updateCurrentUser } from "firebase/auth";
 // react
-import React from "react";
+import React, { useState } from "react";
 // import pages
 import ManagePage from "./pages/ManagePage/ManagePage";
 import Login from "./pages/Login/Login";
@@ -15,10 +17,14 @@ import Navbar from "./Components/Navbar/Navbar";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
+  const [user, setUser] = useState({});
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+  });
   return (
     <div>
       <Navbar />
-
+      {user && <p>{user.email}</p>}
       <Routes>
         <Route path="/" element={<ManagePage />} />
         <Route path="/login" element={<Login />} />
