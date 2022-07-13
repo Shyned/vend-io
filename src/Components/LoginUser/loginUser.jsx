@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useRef } from "react";
 import { auth } from "../../firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { Navigate } from "react-router-dom";
 
 export default function LoginUser() {
   const emailRef = useRef();

@@ -11,22 +11,28 @@ import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 // import components
 import Navbar from "./Components/Navbar/Navbar";
-// imported hooks
+
+import PrivateRoute from "./utils/PrivateRoute";
 
 // react routes imports
 import { Routes, Route } from "react-router-dom";
 
 function App() {
+  const [hasUser, setHasUser] = useState(false);
   const [user, setUser] = useState({});
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
+    user ? setHasUser(true) : setHasUser(false);
   });
+
   return (
     <div>
       <Navbar />
       {user && <p>{user.email}</p>}
       <Routes>
-        <Route path="/" element={<ManagePage />} />
+        <Route element={<PrivateRoute hasUser={hasUser} />}>
+          <Route path="/manage" element={<ManagePage />} />
+        </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
