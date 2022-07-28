@@ -4,19 +4,19 @@ import { getAuth } from "firebase/auth";
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = {
-  apiKey: "AIzaSyDYXLAuRIshpMh5ue-GoaFzhVF3_s7ZXCc",
+  apiKey: "AIzaSyDgIk4-RKDUpmQt122UfQF04WDWbiZJUBw",
 
-  authDomain: "vendmanage.firebaseapp.com",
+  authDomain: "vend-manager-5515c.firebaseapp.com",
 
-  projectId: "vendmanage",
+  projectId: "vend-manager-5515c",
 
-  storageBucket: "vendmanage.appspot.com",
+  storageBucket: "vend-manager-5515c.appspot.com",
 
-  messagingSenderId: "690828840929",
+  messagingSenderId: "754185542591",
 
-  appId: "1:690828840929:web:3dc56e22dc704a72434ca0",
+  appId: "1:754185542591:web:387be0b4e2d76252d5df0a",
 
-  measurementId: "G-TZ3PN3PPK2",
+  measurementId: "G-NW7VHLB2CB",
 };
 
 // Initialize Firebase

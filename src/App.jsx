@@ -9,6 +9,7 @@ import React, { useState } from "react";
 import ManagePage from "./pages/ManagePage/ManagePage";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
+import HomePage from "./pages/HomePage/HomePage";
 // import components
 import Navbar from "./Components/Navbar/Navbar";
 
@@ -33,6 +34,7 @@ function App() {
         <Route element={<PrivateRoute hasUser={hasUser} />}>
           <Route path="/manage" element={<ManagePage />} />
         </Route>
+        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
