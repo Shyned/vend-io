@@ -1,8 +1,9 @@
 // imported stylesheet
 import "./App.css";
 // import for firebase
-import { auth } from "./firebaseConfig";
+import { auth , database } from "./firebaseConfig";
 import { onAuthStateChanged, updateCurrentUser } from "firebase/auth";
+import { collection , addDoc } from "firebase/firestore";
 // react
 import React, { useState } from "react";
 // import pages
@@ -21,6 +22,12 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   const [hasUser, setHasUser] = useState(false);
   const [user, setUser] = useState({});
+  const collectionRef =  collection(database , "user")
+
+const handlesubmit = () =>{
+  addDoc(collectionRef, {email:database.email})
+}
+
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
     user ? setHasUser(true) : setHasUser(false);
@@ -29,7 +36,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      {user && <p>{user.email}</p>}
+      
       <Routes>
         <Route element={<PrivateRoute hasUser={hasUser} />}>
           <Route path="/manage" element={<ManagePage />} />
