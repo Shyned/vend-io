@@ -1,5 +1,5 @@
 import React from "react";
-//  video 
+//  video
 
 export default function HomePage() {
   return (
